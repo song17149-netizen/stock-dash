@@ -18,6 +18,7 @@ from providers import DataError, Official, demo
 from storage import Store
 from portfolio_ui import render_portfolio
 from ui_v2 import apply_theme, brand, card, empty_state, hero, source_badge
+from dashboard_ui import render_decision_dashboard
 
 
 load_dotenv()
@@ -321,6 +322,8 @@ def global_search():
 
 
 def render_home():
+    render_decision_dashboard({"stock": stock, "report": report, "sample_mode": sample_mode})
+    return
     hero(
         "시장을 읽고, 더 나은 판단을 만듭니다.",
         "공시·재무·시세를 한 흐름으로 연결하고, 새 기관 API가 추가될수록 시장·수급·산업 분석이 확장됩니다.",
